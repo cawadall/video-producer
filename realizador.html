@@ -1,0 +1,56 @@
+<!--tenemos un servidor con los vídeos
+// los pedimos y los guardamos en local
+// el audio sólo se reproduce si se pasa el ratón por encima del vídeo-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="realizador_stylesheet.css" media="screen">
+    <title>REALIZADOR</title>
+  </head>
+
+  <body onload=init()>
+    <div align="center" id="c">
+      <video id="myVideo1" width="220" height="140" src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4" type="video/mp4" preload="auto" autoplay=true muted=true controls loop>
+        Your browser does not support the video tag.
+      </video>
+      <video id="myVideo2" width="220" height="140" src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4" type="video/mp4" preload="auto" autoplay=true muted=true controls loop>
+        Your browser does not support the video tag.
+      </video>
+      <video id="myVideo3" width="220" height="140" src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4" type="video/mp4" preload="auto" autoplay=true muted=true controls loop>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+      <div width="900" height="600" align="center">
+        
+        <video id="mainVideo" width="320" height="240" src="" type="video/mp4" preload="auto" loop>
+          Your browser does not support the video tag.
+        </video>
+        <button id="audio" onclick="audioPlay()">Press to Add Audio</button>
+        <form method="get" id="sampler">
+          <fieldset>
+          <legend>SAMPLER</legend>
+          Loop Beggining:<br>
+          <input type="range" min="0" max="10" id="begin"><p id="beginp" class="right">5</p>
+          Loop End:<br>
+          <input type="range" min="0" max="10" id="end"><p id="endp" class="right">5</p>
+          Input the Number of Iterations:<br>
+          <p><input type="text" id="iterations"></p>
+          <p><input type="button" onclick="loopEstablishment()" value="Loop"></input></p>
+          </fieldset>
+        </form>
+      </div>
+    <div id="down">
+        <div class="down" align="center">
+            <p id="timing"></p>
+            <p><strong>Note:</strong> The video tag is not supported in Internet Explorer 8 and earlier versions.</p>
+        </div>
+        <div align="center">
+            <button id="vid1" onclick="">VIDEO 1</button>
+            <button id="vid2" onclick="">VIDEO 2</button>
+            <button id="vid3" onclick="">VIDEO 3</button>
+        </div>
+    </div>
+  </body>
+  <script src="realizador.js"></script>
+</html>
